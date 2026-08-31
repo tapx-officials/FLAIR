@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  >
+
+  <meta
+    name="theme-color"
+    content="#080605"
+  >
+
+  <title>FLAIR — Your Experience</title>
+
+  <!-- Luxury typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Lucide icons from CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       AMBIENT BACKGROUND
+  ====================================================== -->
+
+  <div class="ambient ambient-gold"></div>
+  <div class="ambient ambient-wine"></div>
+  <div class="ambient ambient-bronze"></div>
+
+  <div class="grain"></div>
+
+
+  <!-- =====================================================
+       APP
+  ====================================================== -->
+
+  <main class="app">
+
+
+    <!-- ===================================================
+         HEADER
+    ==================================================== -->
+
+    <header class="top-header">
+
+      <div class="brand">
+
+        <div class="brand-name">
+          FLAIR
+        </div>
+
+        <div class="brand-sub">
+          LOUNGE
+          <span>•</span>
+          BAR
+          <span>•</span>
+          DINING
+        </div>
+
+      </div>
+
+
+      <div class="steps">
+
+        <div class="step active" id="step1">
+
+          <span class="step-number">
+            1
+          </span>
+
+          <span class="step-label">
+            SELECT
+          </span>
+
+        </div>
+
+
+        <span class="step-line"></span>
+
+
+        <div class="step" id="step2">
+
+          <span class="step-number">
+            2
+          </span>
+
+          <span class="step-label">
+            RATE
+          </span>
+
+        </div>
+
+
+        <span class="step-line"></span>
+
+
+        <div class="step" id="step3">
+
+          <span class="step-number">
+            3
+          </span>
+
+          <span class="step-label">
+            REVIEW
+          </span>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- ===================================================
+         CONTENT
+    ==================================================== -->
+
+    <section class="content-area">
+
+
+      <!-- =================================================
+           SCREEN 1
+      ================================================== -->
+
+      <section
+        class="screen active"
+        id="screen1"
+      >
+
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            YOUR FLAIR EXPERIENCE
+          </div>
+
+          <h1>
+            What made your
+            <em>night?</em>
+          </h1>
+
+          <p class="intro">
+            Pick everything that stood out during your visit.
+          </p>
+
+        </div>
+
+
+        <div class="selection-meta">
+
+          <span>
+            YOUR HIGHLIGHTS
+          </span>
+
+          <span id="selectedCount">
+            0 SELECTED
+          </span>
+
+        </div>
+
+
+        <!-- ONLY THIS AREA SCROLLS -->
+
+        <div
+          class="options-scroll"
+          id="optionsScroll"
+        >
+
+
+          <button
+            class="experience-option"
+            data-topic="Food"
+            data-description="Taste & presentation"
+          >
+
+            <span class="icon-box">
+              <i data-lucide="utensils"></i>
+            </span>
+
+            <span class="option-content">
+
+              <strong>
+                Food
+              </strong>
+
+              <small>
+                Taste & presentation
+              </small>
+
+            </span>
+
+            <span class="option-check">
+              <i data-lucide="check"></i>
+            </span>
+
+          </button>
+
+
+
+          <button
+            class="experience-option"
+            data-topic="Drinks"
+            data-description="Cocktails & beverages"
+          >
+
+            <span class="icon-box">
+              <i data-lucide="wine"></i>
+            </span>
+
+            <span class="option-content">
+
+              <strong>
+                Drinks
+              </strong>
+
+              <small>
+                Cocktails & beverages
+              </small>
+
+            </span>
+
+            <span class="option-check">
+              <i data-lucide="check"></i>
+            </span>
+
+          </button>
+
+
+
+          <button
+            class="experience-option"
+            data-topic="Ambience"
+            data-description="Setting & atmosphere"
+          >
+
+            <span class="icon-box">
+              <i data-lucide="lamp-ceiling"></i>
+            </span>
+
+            <span class="option-content">
+
+              <strong>
+                Ambience
+              </strong>
+
+              <small>
+                Setting & atmosphere
+              </small>
+
+            </span>
+
+            <span class="option-check">
+              <i data-lucide="check"></i>
+            </span>
+
+          </button>
+
+
+
+          <button
+            class="experience-option"
+            data-topic="Music"
+            data-description="Sound & energy"
+          >
+
+            <span class="icon-box">
+              <i data-lucide="music-2"></i>
+            </span>
+
+            <span class="option-content">
+
+              <strong>
+                Music
+              </strong>
+
+              <small>
+                Sound & energy
+              </small>
+
+            </span>
+
+            <span class="option-check">
+              <i data-lucide="check"></i>
+            </span>
+
+          </button>
+
+
+
+          <button
+            class="experience-option"
+            data-topic="Service"
+            data-description="Attention & hospitality"
+          >
+
+            <span class="icon-box">
+              <i data-lucide="concierge-bell"></i>
+            </span>
+
+            <span class="option-content">
+
+              <strong>
+                Service
+              </strong>
+
+              <small>
+                Attention & hospitality
+              </small>
+
+            </span>
+
+            <span class="option-check">
+              <i data-lucide="check"></i>
+            </span>
+
+          </button>
+
+
+
+          <button
+            class="experience-option"
+            data-topic="Staff"
+            data-description="Warmth & professionalism"
+          >
+
+            <span class="icon-box">
+              <i data-lucide="users-round"></i>
+            </span>
+
+            <span class="option-content">
+
+              <strong>
+                Staff
+              </strong>
+
+              <small>
+                Warmth & professionalism
+              </small>
+
+            </span>
+
+            <span class="option-check">
+              <i data-lucide="check"></i>
+            </span>
+
+          </button>
+
+
+
+          <button
+            class="experience-option"
+            data-topic="Vibe"
+            data-description="Energy & atmosphere"
+          >
+
+            <span class="icon-box">
+              <i data-lucide="sparkles"></i>
+            </span>
+
+            <span class="option-content">
+
+              <strong>
+                Overall Vibe
+              </strong>
+
+              <small>
+                Energy & atmosphere
+              </small>
+
+            </span>
+
+            <span class="option-check">
+              <i data-lucide="check"></i>
+            </span>
+
+          </button>
+
+
+
+          <button
+            class="experience-option"
+            data-topic="Experience"
+            data-description="The night as a whole"
+          >
+
+            <span class="icon-box">
+              <i data-lucide="heart"></i>
+            </span>
+
+            <span class="option-content">
+
+              <strong>
+                Experience
+              </strong>
+
+              <small>
+                The night as a whole
+              </small>
+
+            </span>
+
+            <span class="option-check">
+              <i data-lucide="check"></i>
+            </span>
+
+          </button>
+
+
+        </div>
+
+
+        <!-- FIXED ACTION -->
+
+        <div class="bottom-action">
+
+          <div class="selection-status">
+
+            <span id="summaryCount">
+              0
+            </span>
+
+            highlights selected
+
+          </div>
+
+
+          <button
+            class="primary-btn"
+            id="continueBtn"
+            disabled
+          >
+
+            Continue
+
+            <i data-lucide="arrow-right"></i>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SCREEN 2
+      ================================================== -->
+
+      <section
+        class="screen"
+        id="screen2"
+      >
+
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            STEP TWO
+          </div>
+
+          <h1>
+            Rate what you
+            <em>loved.</em>
+          </h1>
+
+          <p class="intro">
+            Tap the stars to tell us how each part felt.
+          </p>
+
+        </div>
+
+
+        <!-- ONLY RATING AREA SCROLLS -->
+
+        <div
+          class="rating-scroll"
+          id="ratingContainer"
+        ></div>
+
+
+        
+
+
+        <!-- FIXED BUTTON -->
+
+        <div class="bottom-action">
+
+          <div class="selection-status">
+            Tap stars to rate
+          </div>
+
+
+          <button
+            class="primary-btn"
+            id="createReviewBtn"
+            disabled
+          >
+
+            Create review
+
+            <i data-lucide="sparkles"></i>
+
+          </button>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- =================================================
+           SCREEN 3
+      ================================================== -->
+
+      <section
+        class="screen"
+        id="screen3"
+      >
+
+        <div class="hero-copy">
+
+          <div class="eyebrow">
+            STEP THREE
+          </div>
+
+          <h1>
+            Your words are
+            <em>ready.</em>
+          </h1>
+
+          <p class="intro">
+            Here's your personalised review.
+          </p>
+
+        </div>
+
+
+        <div class="review-card">
+
+          <div class="review-top">
+
+            <div class="ai-badge">
+
+              <i data-lucide="sparkles"></i>
+
+              FLAIR AI
+
+            </div>
+
+
+<div class="review-rating-display">
+
+  <div
+    class="review-stars"
+    id="reviewStars"
+  >
+    ☆☆☆☆☆
+  </div>
+
+  <div
+    class="review-average"
+    id="reviewAverage"
+  >
+    0.0 / 5
+  </div>
+
+</div>
+
+          </div>
+
+
+          <div class="quote-mark">
+            “
+          </div>
+
+
+          <p id="generatedReview"></p>
+
+        </div>
+
+
+        <div class="review-tip">
+
+          <i data-lucide="info"></i>
+
+          You can edit the review once Google opens.
+
+        </div>
+
+
+        <!-- ONE CTA ONLY -->
+
+        <button
+          class="google-combined-btn"
+          id="googleBtn"
+        >
+
+          <span class="google-icon">
+            <i data-lucide="star"></i>
+          </span>
+
+
+          <span class="google-copy">
+
+            <strong>
+              Copy & Open Google Reviews
+            </strong>
+
+            <small>
+              Your review will be copied automatically
+            </small>
+
+          </span>
+
+
+          <i
+            class="google-arrow"
+            data-lucide="arrow-up-right"
+          ></i>
+
+        </button>
+
+
+        <button
+          class="restart-btn"
+          id="restartBtn"
+        >
+          Start again
+        </button>
+
+      </section>
+
+
+
+      <!-- =================================================
+           LOADING SCREEN
+      ================================================== -->
+
+      <section
+        class="screen loading-screen"
+        id="loadingScreen"
+      >
+
+        <div class="loading-orbit">
+
+          <div class="loading-ring"></div>
+
+          <div class="loading-core">
+
+            <i data-lucide="star"></i>
+
+          </div>
+
+        </div>
+
+
+        <div class="loading-brand">
+          FLAIR
+        </div>
+
+
+        <h2>
+          Opening
+          <br>
+          <em>Google reviews.</em>
+        </h2>
+
+
+        <p id="loadingText">
+          Preparing your experience...
+        </p>
+
+
+        <div class="loading-progress">
+
+          <div id="loadingProgress"></div>
+
+        </div>
+
+      </section>
+
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FOOTER
+    ==================================================== -->
+
+    <footer class="footer">
+
+      <span>
+        FLAIR
+      </span>
+
+      <span>
+        YOUR EXPERIENCE MATTERS
+      </span>
+
+    </footer>
+
+  </main>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
