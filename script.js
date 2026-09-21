@@ -12,6 +12,17 @@ const GOOGLE_REVIEW_URL =
 
 
 /* =========================================================
+   FLAIR GOOGLE SHEETS LOGGER
+   ========================================================= */
+
+const REVIEW_LOGGER_URL =
+  "https://script.google.com/macros/s/AKfycbyfvb798mA2Ntn4O_WHE09WAI5DwjL7xOVQxu5yy7hfMlnlxoHhtvAINeVuKnxNx55oXQ/exec";
+
+const CLIENT_NAME =
+  "FLAIR";
+
+
+/* =========================================================
    STATE
    ========================================================= */
 
@@ -20,6 +31,8 @@ let selectedTopics = [];
 let ratings = {};
 
 let reviewText = "";
+
+let googleButtonBusy = false;
 
 
 /* =========================================================
@@ -346,7 +359,6 @@ function buildRatingScreen() {
 
 
     /*
-      IMPORTANT:
       Customer MUST manually select stars.
       Default = 0
     */
@@ -1242,7 +1254,7 @@ function random(array) {
 
 
 /* =========================================================
-   COPY + OPEN GOOGLE
+   COPY + LOG + OPEN GOOGLE
    ========================================================= */
 
 if (googleBtn) {
@@ -1252,7 +1264,26 @@ if (googleBtn) {
     async () => {
 
       /*
-        Show loading first
+        Prevent accidental double clicks
+      */
+
+      if (googleButtonBusy) {
+        return;
+      }
+
+
+      googleButtonBusy = true;
+
+
+      /*
+        Disable button while processing
+      */
+
+      googleBtn.disabled = true;
+
+
+      /*
+        Show loading immediately
       */
 
       showScreen(
@@ -1264,21 +1295,50 @@ if (googleBtn) {
 
 
       /*
-        Copy review
+        Copy exact generated review
       */
 
       await copyReview();
 
 
       /*
-        Loading animation
+        Start Google Sheets logging
+      */
+
+      const loggingPromise =
+        logReviewToSheets();
+
+
+      /*
+        Run existing FLAIR loader
       */
 
       await runLoading();
 
 
       /*
-        Open Google Review
+        Give the logging request
+        a little additional time
+        before leaving the page.
+      */
+
+      await Promise.race([
+
+        loggingPromise,
+
+        new Promise(
+          resolve =>
+            setTimeout(
+              resolve,
+              1200
+            )
+        )
+
+      ]);
+
+
+      /*
+        Open Google Reviews
       */
 
       window.location.href =
@@ -1286,6 +1346,74 @@ if (googleBtn) {
 
     }
   );
+
+}
+
+
+/* =========================================================
+   LOG REVIEW TO GOOGLE SHEETS
+   ========================================================= */
+
+async function logReviewToSheets() {
+
+  /*
+    Do not send an empty review.
+  */
+
+  if (!reviewText) {
+    return;
+  }
+
+
+  try {
+
+    await fetch(
+      REVIEW_LOGGER_URL,
+      {
+
+        method: "POST",
+
+        mode: "no-cors",
+
+        headers: {
+
+          "Content-Type":
+            "text/plain;charset=utf-8"
+
+        },
+
+        body:
+          JSON.stringify({
+
+            client:
+              CLIENT_NAME,
+
+            review:
+              reviewText
+
+          }),
+
+        keepalive: true
+
+      }
+    );
+
+  }
+
+  catch (error) {
+
+    /*
+      Logging failure must NOT
+      prevent the customer from
+      opening Google Reviews.
+    */
+
+    console.warn(
+      "FLAIR review logging failed:",
+      error
+    );
+
+  }
 
 }
 
@@ -1540,6 +1668,8 @@ function restart() {
 
   reviewText = "";
 
+  googleButtonBusy = false;
+
 
   /*
     Reset option buttons
@@ -1554,6 +1684,18 @@ function restart() {
 
     }
   );
+
+
+  /*
+    Reset Google button
+  */
+
+  if (googleBtn) {
+
+    googleBtn.disabled =
+      false;
+
+  }
 
 
   /*
