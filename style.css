@@ -33,12 +33,14 @@ body {
     overflow-x: hidden;
 }
 
-button {
-    font-family: inherit;
-}
+
+/* =================================
+   MAIN PAGE
+================================= */
 
 .payment-page {
     position: relative;
+
     min-height: 100dvh;
 
     display: flex;
@@ -58,10 +60,14 @@ button {
         #09090b;
 }
 
-/* Ambient glow */
+
+/* =================================
+   AMBIENT GLOW
+================================= */
 
 .ambient {
     position: absolute;
+
     width: 260px;
     height: 260px;
 
@@ -75,16 +81,23 @@ button {
 .ambient-one {
     top: -130px;
     right: -100px;
-    background: rgba(255, 106, 0, 0.18);
+
+    background:
+        rgba(255, 106, 0, 0.18);
 }
 
 .ambient-two {
     bottom: -160px;
     left: -120px;
-    background: rgba(255, 106, 0, 0.10);
+
+    background:
+        rgba(255, 106, 0, 0.10);
 }
 
-/* Main card */
+
+/* =================================
+   MAIN CARD
+================================= */
 
 .payment-card {
     position: relative;
@@ -95,7 +108,9 @@ button {
 
     padding: 30px 22px 24px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid var(--border);
+
     border-radius: 28px;
 
     background:
@@ -113,78 +128,105 @@ button {
         0 30px 80px rgba(0,0,0,0.55),
         inset 0 1px 0 rgba(255,255,255,0.04);
 
-    animation: cardIn 0.55s ease both;
+    animation:
+        cardIn 0.55s ease both;
 }
 
+
 @keyframes cardIn {
+
     from {
         opacity: 0;
-        transform: translateY(18px) scale(0.98);
+        transform:
+            translateY(18px)
+            scale(0.98);
     }
 
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
-/* Warning icon */
+
+/* =================================
+   WARNING
+================================= */
 
 .warning-icon {
     width: 72px;
     height: 72px;
-    
+
     margin: 0 auto 18px;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     border-radius: 22px;
-    
-    background: rgba(255, 59, 48, 0.10);
-    border: 1px solid rgba(255, 59, 48, 0.30);
-    
+
+    background:
+        rgba(255, 59, 48, 0.10);
+
+    border:
+        1px solid
+        rgba(255, 59, 48, 0.30);
+
     box-shadow:
-        0 0 0 0 rgba(255, 59, 48, 0.30);
-    
-    animation: warningPulse 1.4s infinite;
+        0 0 0 0
+        rgba(255, 59, 48, 0.30);
+
+    animation:
+        warningPulse 1.4s infinite;
 }
 
 .warning-icon span {
     font-size: 38px;
     line-height: 1;
-    
+
     color: #ff3b30;
-    
+
     filter:
-        drop-shadow(0 0 12px rgba(255, 59, 48, 0.55));
+        drop-shadow(
+            0 0 12px
+            rgba(255, 59, 48, 0.55)
+        );
 }
+
 
 @keyframes warningPulse {
-    
+
     0% {
         box-shadow:
-            0 0 0 0 rgba(255, 59, 48, 0.30);
+            0 0 0 0
+            rgba(255, 59, 48, 0.30);
     }
-    
+
     60% {
         box-shadow:
-            0 0 0 14px rgba(255, 59, 48, 0);
+            0 0 0 14px
+            rgba(255, 59, 48, 0);
     }
-    
+
     100% {
         box-shadow:
-            0 0 0 0 rgba(255, 59, 48, 0);
+            0 0 0 0
+            rgba(255, 59, 48, 0);
     }
 }
 
-/* Status */
+
+/* =================================
+   STATUS
+================================= */
 
 .status-pill {
     width: fit-content;
 
     margin: 0 auto 16px;
+
     padding: 7px 11px;
 
     display: flex;
@@ -195,11 +237,17 @@ button {
 
     color: #ff9a50;
 
-    background: rgba(255,106,0,0.09);
-    border: 1px solid rgba(255,106,0,0.20);
+    background:
+        rgba(255,106,0,0.09);
+
+    border:
+        1px solid
+        rgba(255,106,0,0.20);
 
     font-size: 10px;
+
     font-weight: 800;
+
     letter-spacing: 1.1px;
 }
 
@@ -208,12 +256,17 @@ button {
     height: 6px;
 
     border-radius: 50%;
-    background: var(--orange);
 
-    box-shadow: 0 0 8px var(--orange);
+    background:
+        var(--orange);
 
-    animation: dotBlink 1s infinite;
+    box-shadow:
+        0 0 8px var(--orange);
+
+    animation:
+        dotBlink 1s infinite;
 }
+
 
 @keyframes dotBlink {
 
@@ -222,50 +275,61 @@ button {
     }
 }
 
-/* Heading */
+
+/* =================================
+   HEADING
+================================= */
 
 h1 {
     text-align: center;
 
-    font-size: clamp(34px, 9vw, 46px);
+    font-size:
+        clamp(34px, 9vw, 46px);
+
     line-height: 0.98;
 
     letter-spacing: -1.8px;
 
     font-weight: 800;
 
-    color: var(--white);
+    color:
+        var(--white);
 }
 
 h1 span {
-    color: var(--orange);
+    color:
+        var(--orange);
 }
 
-/* Message */
+
+/* =================================
+   MESSAGE
+================================= */
 
 .message {
     margin-top: 22px;
 
-    color: #d0d0d4;
+    color:
+        #d0d0d4;
 
     font-size: 14px;
+
     line-height: 1.65;
 
     text-align: center;
 }
 
-.message.secondary {
-    margin-top: 10px;
-
-    color: var(--muted);
-}
-
 .message strong {
-    color: #ffffff;
+    color:
+        #ffffff;
+
     font-weight: 700;
 }
 
-/* Due box */
+
+/* =================================
+   DUE BOX
+================================= */
 
 .due-box {
     margin-top: 22px;
@@ -274,34 +338,46 @@ h1 span {
 
     border-radius: 18px;
 
-    background: rgba(255,255,255,0.035);
-    border: 1px solid rgba(255,255,255,0.075);
+    background:
+        rgba(255,255,255,0.035);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.075);
 }
 
 .due-row {
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 15px;
 }
 
 .due-row span {
-    color: #8f8f96;
+    color:
+        #8f8f96;
 
     font-size: 12px;
+
     font-weight: 500;
 }
 
 .due-row strong {
-    color: #ffffff;
+    color:
+        #ffffff;
 
     font-size: 14px;
+
     font-weight: 700;
 }
 
 .due-row:first-child strong {
-    color: var(--orange);
+    color:
+        var(--orange);
+
     font-size: 17px;
 }
 
@@ -310,160 +386,218 @@ h1 span {
 
     margin: 13px 0;
 
-    background: rgba(255,255,255,0.07);
+    background:
+        rgba(255,255,255,0.07);
 }
 
-/* Payment button */
 
-.pay-button {
-    position: relative;
+/* =================================
+   QR SECTION
+================================= */
 
-    width: 100%;
-    height: 58px;
-
+.qr-section {
     margin-top: 18px;
 
-    border: none;
-    border-radius: 17px;
+    padding: 18px 15px 16px;
 
+    border-radius: 21px;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.075);
+
+    text-align: center;
+}
+
+
+.qr-heading {
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    gap: 7px;
 
-    color: #ffffff;
+    color:
+        #eeeeef;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ff7a18,
-            #ff5a00
-        );
+    font-size: 10px;
 
-    box-shadow:
-        0 12px 28px rgba(255,106,0,0.24);
-
-    cursor: pointer;
-
-    font-size: 14px;
     font-weight: 800;
 
-    transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease,
-        filter 0.18s ease;
+    letter-spacing: 1.5px;
 
-    overflow: hidden;
+    margin-bottom: 14px;
 }
 
-.pay-button::before {
-    content: "";
 
-    position: absolute;
+.qr-icon {
+    width: 19px;
+    height: 19px;
 
-    top: 0;
-    left: -100%;
+    display: inline-flex;
 
-    width: 70%;
-    height: 100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,0.22),
-            transparent
-        );
-
-    transform: skewX(-20deg);
-
-    animation: shine 2.8s infinite;
-}
-
-@keyframes shine {
-
-    0% {
-        left: -100%;
-    }
-
-    45%,
-    100% {
-        left: 140%;
-    }
-}
-
-.pay-button:active {
-    transform: scale(0.97);
-
-    box-shadow:
-        0 7px 18px rgba(255,106,0,0.20);
-}
-
-.upi-logo {
-    position: relative;
-    z-index: 1;
-
-    padding: 4px 6px;
+    align-items: center;
+    justify-content: center;
 
     border-radius: 6px;
 
-    background: rgba(0,0,0,0.18);
+    color:
+        var(--orange);
+
+    background:
+        rgba(255,106,0,0.10);
+
+    font-size: 15px;
+}
+
+
+/* =================================
+   QR IMAGE
+================================= */
+
+.qr-card {
+    width: 205px;
+    height: 205px;
+
+    padding: 10px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background:
+        #ffffff;
+
+    box-shadow:
+        0 16px 42px
+        rgba(0,0,0,0.40);
+}
+
+
+.qr-image {
+    display: block;
+
+    width: 185px;
+    height: 185px;
+
+    object-fit: contain;
+}
+
+
+/* =================================
+   SCAN TEXT
+================================= */
+
+.scan-text {
+    margin-top: 11px;
+
+    color:
+        #85858c;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+}
+
+
+/* =================================
+   QR AMOUNT
+================================= */
+
+.qr-amount {
+    width: fit-content;
+
+    margin: 10px auto 0;
+
+    padding: 7px 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    border-radius: 999px;
+
+    color:
+        #bdbdc2;
+
+    background:
+        rgba(255,106,0,0.065);
+
+    border:
+        1px solid
+        rgba(255,106,0,0.12);
+
+    font-size: 8px;
+
+    font-weight: 700;
+}
+
+
+.check {
+    color:
+        var(--orange);
 
     font-size: 10px;
-    letter-spacing: 0.3px;
 }
 
-.pay-text,
-.arrow {
-    position: relative;
-    z-index: 1;
-}
 
-.arrow {
-    margin-left: 2px;
-
-    font-size: 20px;
-
-    transition: transform 0.2s ease;
-}
-
-.pay-button:hover .arrow {
-    transform: translateX(3px);
-}
-
-/* UPI ID */
+/* =================================
+   UPI ID
+================================= */
 
 .payment-note {
-    margin-top: 11px;
+    margin-top: 12px;
 
     text-align: center;
 
-    color: #77777e;
+    color:
+        #77777e;
 
     font-size: 10px;
 }
 
 .payment-note strong {
-    color: #aaaab0;
+    color:
+        #aaaab0;
 }
 
-/* Support */
+
+/* =================================
+   SUPPORT NOTE
+================================= */
 
 .support-note {
     margin-top: 20px;
 
     display: flex;
+
     align-items: flex-start;
+
     gap: 10px;
 
     padding: 13px;
 
     border-radius: 15px;
 
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.055);
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.055);
 }
+
 
 .support-note > span {
     flex: 0 0 auto;
@@ -472,82 +606,119 @@ h1 span {
     height: 18px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
-    color: #8d8d93;
-    border: 1px solid #55555a;
+    color:
+        #8d8d93;
+
+    border:
+        1px solid
+        #55555a;
 
     font-size: 10px;
+
     font-weight: 700;
 }
 
+
 .support-note p {
-    color: #85858c;
+    color:
+        #85858c;
 
     font-size: 10px;
+
     line-height: 1.55;
 }
 
-/* Footer */
+
+/* =================================
+   FOOTER
+================================= */
 
 .footer-brand {
     margin-top: 23px;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     gap: 7px;
 
-    color: #626269;
+    color:
+        #626269;
 
     font-size: 9px;
 }
 
+
 .footer-brand span {
-    color: #96969d;
+    color:
+        #96969d;
 
     font-size: 11px;
+
     font-weight: 800;
 }
+
 
 .footer-brand b {
     font-weight: 500;
 }
 
-/* Small phones */
 
-@media (max-height: 700px) {
+/* =================================
+   SMALL PHONES
+================================= */
+
+@media (max-height: 760px) {
 
     .payment-page {
-        padding-top: 14px;
-        padding-bottom: 14px;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
 
     .payment-card {
-        padding-top: 22px;
-        padding-bottom: 18px;
+        padding-top: 23px;
+        padding-bottom: 20px;
     }
 
     .warning-icon {
-        width: 60px;
-        height: 60px;
+        width: 62px;
+        height: 62px;
 
-        margin-bottom: 12px;
+        margin-bottom: 13px;
     }
 
     .warning-icon span {
-        font-size: 32px;
+        font-size: 33px;
     }
 
     .message {
-        margin-top: 16px;
+        margin-top: 17px;
     }
 
     .due-box {
-        margin-top: 16px;
+        margin-top: 17px;
+    }
+
+    .qr-section {
+        margin-top: 14px;
+        padding-top: 15px;
+    }
+
+    .qr-card {
+        width: 175px;
+        height: 175px;
+    }
+
+    .qr-image {
+        width: 155px;
+        height: 155px;
     }
 
     .support-note {
@@ -555,6 +726,6 @@ h1 span {
     }
 
     .footer-brand {
-        margin-top: 15px;
+        margin-top: 16px;
     }
 }
