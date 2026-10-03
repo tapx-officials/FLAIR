@@ -1,67 +1,84 @@
 "use strict";
 
+
 /*
     FLAIR — PAYMENT NOTICE
 
-    UPI:
-    9910106056@ibl
+    Payment is now QR-only.
 
-    Amount:
-    ₹1500
+    QR image:
+    qr.png
+
+    QR contains the ₹1,500 payment details.
 */
+
+
+/* =================================
+   PAYMENT INFORMATION
+================================= */
 
 const UPI_ID = "9910106056@ibl";
 const PAYMENT_AMOUNT = "1500";
-const BUSINESS_NAME = "FLAIR";
 
-const payButton = document.getElementById("payButton");
 
-function createUPILink() {
+/* =================================
+   QR VALIDATION
+================================= */
+
+const qrImage =
+  document.querySelector(".qr-image");
+
+
+if (qrImage) {
   
-  const params = new URLSearchParams({
-    pa: UPI_ID,
-    pn: BUSINESS_NAME,
-    am: PAYMENT_AMOUNT,
-    cu: "INR",
-    tn: "Review Card Payment Due ₹1500"
-  });
+  qrImage.addEventListener(
+    "error",
+    function() {
+      
+      console.error(
+        "FLAIR QR image could not be loaded."
+      );
+      
+    }
+  );
   
-  return `upi://pay?${params.toString()}`;
 }
 
-function openUPIPayment() {
-  
-  const upiLink = createUPILink();
-  
-  /*
-      Opening the UPI intent lets the phone show
-      compatible UPI apps such as PhonePe, Google Pay,
-      Paytm, BHIM etc.
-  */
-  
-  window.location.href = upiLink;
-}
 
-payButton.addEventListener("click", openUPIPayment);
+/* =================================
+   PREVENT CONTEXT MENU
+================================= */
 
-
-/*
-    Extra protection against accidental page interaction.
-    The notice itself remains the only available action.
-*/
-
-document.addEventListener("contextmenu", function(event) {
-  event.preventDefault();
-});
+document.addEventListener(
+  "contextmenu",
+  function(event) {
+    
+    event.preventDefault();
+    
+  }
+);
 
 
-/*
-    Prevent browser back/forward from unexpectedly
-    returning to a previous review-page state.
-*/
+/* =================================
+   KEEP PAYMENT NOTICE ON BACK
+================================= */
 
-history.pushState(null, "", location.href);
+history.pushState(
+  null,
+  "",
+  location.href
+);
 
-window.addEventListener("popstate", function() {
-  history.pushState(null, "", location.href);
-});
+
+window.addEventListener(
+  "popstate",
+  function() {
+    
+    history.pushState(
+      null,
+      "",
+      location.href
+    );
+    
+  }
+);
